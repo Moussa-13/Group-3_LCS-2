@@ -1,1 +1,1 @@
-This repository is intented to help us practice shell scripting
+This repository is intended to help us practice shell scripting
