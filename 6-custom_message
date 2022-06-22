@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+# HINT:
+# Create a text file with your group member’s first name on each line.
+# Then have another text file with the message template below.
+# Happy New Year Recipeints_Name!
+# May the coming year be full of grand adventures and opportunities.
+# Finally, write a script that makes use of the sed command to produce a personalized message for each group member in a text file.
+
+# Create a text file with your group member’s first name on each line
+echo -e "Abdourahamane\nAlmarat\nAnn\nCelestin\nJesse\nMoussa\nPeggy" >member.txt
+
+# Then have another text file with the message template below.
+# Happy New Year Recipeints_Name!
+# May the coming year be full of grand adventures and opportunities.
+echo -e "Happy New Year Recipeints_Name!\nMay the coming year be full of grand adventures and opportunities." >message.txt
+
+# write a script that makes use of the sed command to produce a personalized message for each group member in a text file
+while read -r member; do
+    # sed command looks for Recipeints_Name in message.txt and replace it with the varibale $member
+    sed "s/Recipeints_Name/$member/" message.txt | xargs echo >"$member.txt"
+done <member.txt
