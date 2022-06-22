@@ -15,4 +15,4 @@ echo "The square root is $ROOT2"
 
 #Print the sum of their square roots
 SUM=$(($ROOT1+$ROOT2))
-echo "The sum of their sqare roots is $SUM"
+echo "The sum of their square roots is $SUM"
