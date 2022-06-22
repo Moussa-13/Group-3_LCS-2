@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#Creating a text file that has numbers 1 to 5 on separate lines and the file name starts with today's date “yyyy-mm-dd-file.txt”.
+
+printf "%s\n" "one" "two" "three" "four" "five" > "$(date +"%Y-%m-%d")-file.txt"
