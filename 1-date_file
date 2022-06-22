@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Write a shell script that will print the strings “one”,” two”,” three”,” four”, and “five” on the screen with each appearing on a separate line. Also, create a text file that has each of these on a separate line and the file name starts with today's date “yyyy-mm-dd-file.txt”. Note Don’t add today’s date manually.
+
+# echo "one"
+# echo "two"
+# echo "three"
+# echo "four"
+# echo "five"
+
+# date_today=$(date +"%Y-%m-%d")
+
+# printf "%s\n" "one" "two" "three" "four" "five" | printf >>"$date_today-file.txt"
+# echo -e "one\ntwo\nthree\nfour\nfive" >"$date_today-file.txt" | cat "$date_today-file.txt"
+
+printf "%s\n" "one" "two" "three" "four" "five" | tee $(date +%F)-file.txt

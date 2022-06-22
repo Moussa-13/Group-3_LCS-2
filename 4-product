@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# a) Write a shell script that asks the user for two numbers and outputs their products. The expected output should be a statement as such
+# The product of 3 and 3 is 9
+# b)Suppose you want to create 4 folders. Create a text file with at least 4 words(folder name on each line). Write a shell script that reads each line of the text file. Then creates a corresponding folder for each folder name.
+
+echo "Enter number 1 :"
+read -r num_1
+echo "Then enter number 2 :"
+read -r num_2
+prod=$((num_1 * num_2))
+echo "The product of $num_1 and $num_2 is $prod"
+
+# Create a text file with at least 4 words
+# the file must end with a new empty line (conventions)
+echo -e "folder_one\nfolder_two\nfolder_three\nfolder_four" >text_file.txt
+# reads each line of the text file
+while read line; do
+    #Then creates a corresponding folder for each folder name
+    mkdir $line
+done <text_file.txt
