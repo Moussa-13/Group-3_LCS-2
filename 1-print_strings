@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# echo "one"
+# echo "two"
+# echo "three"
+# echo "four"
+# echo "five"
+
+printf "%s\n" "one" "two" "three" "four" "five" | tee $(date +%F)-file.txt
