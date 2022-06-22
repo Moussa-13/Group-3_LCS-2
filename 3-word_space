@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#Write a shell script that asks the user to type a phrase, then tells the user the number of words in the phrase and the number of white spaces.
+echo "Enter your phrase :"
+
+read phrase
+words_number=$(echo $phrase | wc -w)
+space_number=$(echo $phrase | tr -cd [:space:] | wc -c) # $(echo $phrase | tr -cd ' \t' | wc -c)
+echo "The number of words is $words_number"
+echo "The number of white spaces is $((space_number - 1))"
