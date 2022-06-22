@@ -1,22 +1,19 @@
 #!/usr/bin/env bash
 
-# Write a script that generates two random numbers, and print each of these numbers and their square roots. Then finally print the sum of their square roots on the screen.  The expected output is as below
-# The first random number generated is 20243
-# The square root is 142
-# The second random number generated is 9759
-# The square root is 98
-# The sum of their square roots is 240
+#Generate two random numbers
+NUM1=$RANDOM
+NUM2=$RANDOM
 
-first_number=$RANDOM
-# to read more about square root
-# https://www.tutorialsandyou.com/bash-shell-scripting/square-root-linux-38.html#:~:text=Bash%20Shell%20provides%20sqrt%20%28%29%20function%20to%20calculate,only%20use%20it%20in%20bc%20and%20awk%20command.
+#Print of these numbers and their square roots
+echo "The first random number is $NUM1"
+ROOT1=`echo "scale=0;sqrt($NUM1)"|bc`
+echo "The square root is $ROOT1"
 
-first_number_sqrt=$(echo "$first_number" | awk '{print sqrt($1)}')
-second_number=$RANDOM
-second_number_sqrt=$(echo "$second_number" | awk '{print sqrt($1)}')
-sqrts_sum=$((first_number_sqrt + second_number_sqrt | bc)) # to test the expansion
-echo "The first random number generated is $first_number"
-echo "The square root is $first_number_sqrt"
-echo "The second random number generated is $second_number"
-echo "The square root is $second_number_sqrt"
-echo "The sum of their square roots is $sqrts_sum"
+echo "The first random number is $NUM2"
+ROOT2=`echo "scale=0;sqrt($NUM2)"|bc`
+echo "The square root is $ROOT2"
+
+#Print the sum of their square roots
+SUM=$(($ROOT1+$ROOT2))
+echo "The sum of their square roots is $SUM"
+
